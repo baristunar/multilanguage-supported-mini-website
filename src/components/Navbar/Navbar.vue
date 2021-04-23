@@ -17,7 +17,9 @@
           <v-layout class="justify-end d-none d-md-flex align-center">
             <router-link class="mr-3 link" to="/">Homepage</router-link>
             <router-link class="mr-3 link" to="/about">About</router-link>
-            <router-link class="mr-3 link" to="/">Contact Us</router-link>
+            <router-link class="mr-3 link" to="/contact-us"
+              >Contact Us</router-link
+            >
             <v-btn depressed small rounded color="primary">Login</v-btn>
             <v-btn small plain depressed>EN</v-btn>
             <span>|</span>
