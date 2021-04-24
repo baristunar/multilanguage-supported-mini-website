@@ -7,7 +7,7 @@
 
       <v-list-item-content>
         <v-list-item-title
-          ><router-link class="link" :to="item.to">{{
+          ><router-link class="text-decoration-none" :to="item.to">{{
             item.title
           }}</router-link></v-list-item-title
         >
@@ -52,8 +52,7 @@ export default {
           title: "Contact Us",
           icon: "mdi-card-account-phone-outline",
           to: "/contact-us",
-        },
-        { title: "About", icon: "mdi-information-variant", to: "/about" },
+        }
       ],
     };
   },
