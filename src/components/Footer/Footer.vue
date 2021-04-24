@@ -1,27 +1,24 @@
 <template>
-  <v-footer fixed dark padless>
-    <v-card class="flex" flat tile>
-      <v-card-title class="primary">
-        <strong class="subheading"
-          >Get connected with us on social networks!</strong
-        >
+  <v-card height="400px">
+    <v-footer padless absolute>
+      <v-card flat tile width="100%" class="red lighten-1 text-center">
+        <v-card-text>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
 
-        <v-spacer></v-spacer>
+        <v-divider></v-divider>
 
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-title>
-
-      <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Coded by Barış Tunar</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>Coded by Barış Tunar</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+  </v-card>
 </template>
-
 <script>
 export default {
   data: () => ({
