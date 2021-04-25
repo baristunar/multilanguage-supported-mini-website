@@ -41,5 +41,8 @@
   ],
   "errors": {
     "404": "404 Not Found."
+  },
+  "information": {
+    "loggedIn": "Logged In"
   }
 }

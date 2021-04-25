@@ -41,5 +41,8 @@
   ],
   "errors": {
     "404": "404 Sayfa Bulunamadı."
+  },
+  "information": {
+    "loggedIn": "Oturum Açıldı"
   }
 }
