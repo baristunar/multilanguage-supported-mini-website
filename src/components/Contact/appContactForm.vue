@@ -17,9 +17,10 @@
     ></v-text-field>
     <v-text-field
       outlined
+      :rules="[rules.phone]"
       :label="$t('form.phone')"
       v-model="contactForm.phone"
-      hint="555-555-55-55"
+      hint="5554443322"
     ></v-text-field>
     <v-autocomplete
       v-model="contactForm.country"
@@ -53,15 +54,21 @@ export default {
   },
   data() {
     return {
+      rules: {
+        phone: (value) => {
+          const pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+          return this.fieldValidate() ? pattern.test(value) : true;
+        },
+      },
       alertMessage: null,
       alertActive: false,
       contactForm: {
-        title: null,
-        name: null,
-        email: null,
+        title: "test",
+        name: "test",
+        email: "tunarbaris@gmail.com",
         phone: null,
         country: null,
-        text: null,
+        text: "test",
       },
     };
   },
@@ -103,9 +110,9 @@ export default {
       }
     },
     phoneValidate() {
-      const phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
-      let digits = this.contactForm.phone.replace(/\D/g, "");
-      return phoneRe.test(digits);
+      const phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      if (this.contactForm.phone.match(phoneno)) return true;
+      return false;
     },
     fieldValidate() {
       const title = this.contactForm.title;
