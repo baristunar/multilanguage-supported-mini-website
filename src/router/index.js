@@ -44,12 +44,10 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  let locale = localStorage.getItem("lang") || "en";
-  if (!localStorage.getItem("lang")) {
-    localStorage.setItem("lang", locale);
-  }
-  i18n.locale = locale;
   if (to.params.locale === "en" || to.params.locale === "tr") {
+    i18n.locale = to.params.locale;
+    localStorage.setItem("lang", to.params.locale);
+
     next();
   }
   if (to.params.locale !== "en" && to.params.locale !== "tr") {
