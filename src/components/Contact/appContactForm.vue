@@ -63,12 +63,12 @@ export default {
       alertMessage: null,
       alertActive: false,
       contactForm: {
-        title: "test",
-        name: "test",
-        email: "tunarbaris@gmail.com",
+        title: null,
+        name: null,
+        email: null,
         phone: null,
         country: null,
-        text: "test",
+        text: null,
       },
     };
   },

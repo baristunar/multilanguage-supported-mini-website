@@ -9,7 +9,6 @@ const routes = [
     path: "/",
     redirect: i18n.locale,
   },
-
   {
     path: "/:locale",
     component: {
@@ -45,18 +44,18 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  let locale = to.params.locale;
-  localStorage.setItem("lang", locale);
+  let locale = localStorage.getItem("lang") || "en";
+  if (!localStorage.getItem("lang")) {
+    localStorage.setItem("lang", locale);
+  }
+  i18n.locale = locale;
+  if (to.params.locale === "en" || to.params.locale === "tr") {
+    next();
+  }
+  if (to.params.locale !== "en" && to.params.locale !== "tr") {
+    console.log("test", to.params.locale);
 
-  if (locale !== "en" || locale !== "tr") {
-    locale = "en";
-  }
-  i18n.locale = localStorage.getItem("lang") || locale;
-  if (from.path !== "/" && to.name) {
-    next();
-  }
-  if (from.path === "/") {
-    next();
+    next("/");
   }
 });
 

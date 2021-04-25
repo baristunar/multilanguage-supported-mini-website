@@ -7,7 +7,7 @@
 
       <v-list-item-content>
         <v-list-item-title
-          ><router-link class="text-decoration-none" :to="item.to">{{
+          ><router-link class="text-decoration-none" :to="{ name: item.to }">{{
             $t(item.title)
           }}</router-link></v-list-item-title
         >
@@ -49,12 +49,12 @@ export default {
         {
           title: "nav.home",
           icon: "mdi-home-city",
-          to: "/",
+          to: "home",
         },
         {
           title: "nav.contactUs",
           icon: "mdi-card-account-phone-outline",
-          to: `${this.$i18n.locale}/contact-us`,
+          to: "contactUs",
         },
       ],
     };

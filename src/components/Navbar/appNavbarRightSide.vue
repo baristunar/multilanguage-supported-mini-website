@@ -2,7 +2,7 @@
   <div>
     <v-layout class="justify-end d-none d-md-flex align-center">
       <div v-for="link in navLinks" :key="link.title">
-        <router-link class="mr-3 link" :to="link.to">{{
+        <router-link class="mr-3 link" :to="{ name: link.to }">{{
           $t(link.title)
         }}</router-link>
       </div>
@@ -34,12 +34,12 @@ export default {
   data() {
     return {
       navLinks: [
-        { title: "nav.home", to: "/" },
+        { title: "nav.home", to: "home" },
         {
           title: "nav.contactUs",
-          to: `${this.$i18n.locale}/contact-us`,
+          to: "contactUs",
         },
-      ],
+      ] /* `${this.$i18n.locale}/contact-us` */,
     };
   },
 };
