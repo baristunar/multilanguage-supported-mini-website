@@ -1,6 +1,6 @@
 <template>
-  <v-card height="400px">
-    <v-footer padless absolute>
+  <v-card>
+    <v-footer padless absolute app>
       <v-card flat tile width="100%" class="red lighten-1 text-center">
         <v-card-text>
           <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>

@@ -19,6 +19,7 @@
       outlined
       :label="$t('form.phone')"
       v-model="contactForm.phone"
+      hint="555-555-55-55"
     ></v-text-field>
     <v-autocomplete
       v-model="contactForm.country"
@@ -37,6 +38,7 @@
       no-resize
       :label="$t('form.description')"
     ></v-textarea>
+    <v-alert v-if="alertActive" type="error">{{ alertMessage }}</v-alert>
     <v-btn color="success" @click="submitForm">{{ $t("buttons.send") }}</v-btn>
   </form>
 </template>
@@ -51,6 +53,8 @@ export default {
   },
   data() {
     return {
+      alertMessage: null,
+      alertActive: false,
       contactForm: {
         title: null,
         name: null,
@@ -63,13 +67,30 @@ export default {
   },
   methods: {
     submitForm() {
-      this.clearFormData();
+      if (this.fieldValidate()) {
+        if (!this.emailValidate()) {
+          this.alertMessage = this.$t("form.alertMessages.emailError");
+          this.alertActive = true;
+        } else if (!this.phoneValidate()) {
+          this.alertMessage = this.$t("form.alertMessages.phoneError");
+          this.alertActive = true;
+        } else if (this.phoneValidate() && this.emailValidate()) {
+          console.log("axios.post('apiUrl'/, {...this.contactForm})", {
+            ...this.contactForm,
+          });
+          this.clearFormData();
+        }
+      } else {
+        this.alertMessage = this.$t("form.alertMessages.fieldError");
+        this.alertActive = true;
+      }
     },
     clearFormData() {
       this.contactForm = {
         title: null,
-        name: this.activeUser.name || null,
-        email: this.activeUser.email || null,
+        name: this.activeUser ? this.activeUser.name : null,
+        email: this.activeUser ? this.activeUser.email : null,
+
         phone: null,
         country: null,
         text: null,
@@ -81,6 +102,25 @@ export default {
         this.contactForm.email = this.activeUser.email;
       }
     },
+    phoneValidate() {
+      const phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+      let digits = this.contactForm.phone.replace(/\D/g, "");
+      return phoneRe.test(digits);
+    },
+    fieldValidate() {
+      const title = this.contactForm.title;
+      const name = this.contactForm.name;
+      const email = this.contactForm.email;
+      const phone = this.contactForm.phone;
+      const country = this.contactForm.country;
+      const text = this.contactForm.text;
+      if (title && name && email && text && phone && country) return true;
+      return false;
+    },
+    emailValidate() {
+      const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return pattern.test(this.contactForm.email);
+    },
   },
   mounted() {
     this.changeFormData();
@@ -89,7 +129,14 @@ export default {
     activeUser() {
       if (this.activeUser) {
         this.changeFormData();
-        console.log("watched");
+      }
+    },
+    alertActive() {
+      if (this.alertActive) {
+        setTimeout(() => {
+          this.alertActive = false;
+          this.alertMessage = null;
+        }, 2000);
       }
     },
   },

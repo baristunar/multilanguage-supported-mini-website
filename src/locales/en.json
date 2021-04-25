@@ -22,7 +22,12 @@
     "phone": "Phone",
     "password": "Password",
     "description": "Description",
-    "country": "Country"
+    "country": "Country",
+    "alertMessages": {
+      "emailError": "Please enter a valid email adress.",
+      "fieldError": "Please fill the fields.",
+      "phoneError": "Please enter a valid phone number."
+    }
   },
   "countryList": [
     { "id": "TR", "name": "Turkey" },

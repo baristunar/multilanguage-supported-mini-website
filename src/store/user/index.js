@@ -6,7 +6,6 @@ export default {
   mutations: {
     setActiveUser(state, pUserData) {
       state.activeUser = pUserData;
-      console.log(state.activeUser)
     },
   },
   getters: {

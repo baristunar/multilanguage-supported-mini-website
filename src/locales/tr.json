@@ -22,7 +22,12 @@
     "phone": "Telefon",
     "password": "Şifre",
     "description": "Açıklama",
-    "country": "Ülke"
+    "country": "Ülke",
+    "alertMessages": {
+      "emailError": "Lütfen geçerli bir e-posta adresi giriniz.",
+      "fieldError": "Lütfen tüm alanları doldurun.",
+      "phoneError": "Lütfen geçerli bir telefon numarası giriniz."
+    }
   },
   "countryList": [
     { "id": "TR", "name": "Türkiye" },
