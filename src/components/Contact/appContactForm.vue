@@ -2,31 +2,31 @@
   <form>
     <v-text-field
       outlined
-      label="Title"
+      :label="$t('form.title')"
       v-model="contactForm.title"
     ></v-text-field>
     <v-text-field
       outlined
-      label="Name"
+      :label="$t('form.name')"
       v-model="contactForm.name"
     ></v-text-field>
     <v-text-field
       outlined
-      label="Email"
+      :label="$t('form.email')"
       v-model="contactForm.email"
     ></v-text-field>
     <v-text-field
       outlined
-      label="Phone"
+      :label="$t('form.phone')"
       v-model="contactForm.phone"
     ></v-text-field>
     <v-autocomplete
       v-model="contactForm.country"
       outlined
-      :items="countryList"
+      :items="$t('countryList')"
       item-value="id"
       item-text="name"
-      label="Country"
+      :label="$t('form.country')"
     ></v-autocomplete>
 
     <v-textarea
@@ -35,9 +35,9 @@
       clearable
       clear-icon="mdi-close-circle"
       no-resize
-      label="Text"
+      :label="$t('form.description')"
     ></v-textarea>
-    <v-btn color="success" @click="submitForm">Send</v-btn>
+    <v-btn color="success" @click="submitForm">{{ $t("buttons.send") }}</v-btn>
   </form>
 </template>
 
@@ -59,16 +59,6 @@ export default {
         country: null,
         text: null,
       },
-      countryList: [
-        { id: "TR", name: "Turkey" },
-        { id: "US", name: "United States of America" },
-        { id: "GB", name: "United Kingdom" },
-        { id: "DE", name: "Germany" },
-        { id: "SE", name: "Sweden" },
-        { id: "KE", name: "Kenya" },
-        { id: "BR", name: "Brazil" },
-        { id: "ZW", name: "Zimbabwe" },
-      ],
     };
   },
   methods: {

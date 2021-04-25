@@ -4,7 +4,7 @@
       <v-card shaped outlined elevation="2" class="pa-5 my-5">
         <v-card-title>
           <v-avatar> <v-icon color="primary"> mdi-email</v-icon></v-avatar>
-          Contact Us
+          {{ $t("nav.contactUs") }}
         </v-card-title>
 
         <v-card-text>

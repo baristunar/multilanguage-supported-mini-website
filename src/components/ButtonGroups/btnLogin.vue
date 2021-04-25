@@ -2,49 +2,59 @@
   <v-col cols="auto">
     <v-dialog transition="dialog-top-transition" max-width="600">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn depressed small rounded color="primary" v-bind="attrs" v-on="on"
-          >Login</v-btn
+        <v-btn
+          depressed
+          small
+          rounded
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+          >{{ $t("buttons.login") }}</v-btn
         >
       </template>
       <template v-slot:default="dialog">
         <v-card>
           <v-toolbar color="primary" dark
-            ><v-icon left>mdi-login </v-icon> Login</v-toolbar
+            ><v-icon left>mdi-login </v-icon> {{ $t("form.login") }}</v-toolbar
           >
           <v-card-text class="mt-5">
             <form>
               <v-text-field
                 v-model="loginData.title"
-                label="Title"
+                :label="$t('form.title')"
                 dense
                 outlined
               ></v-text-field>
               <v-text-field
                 v-model="loginData.name"
-                label="Username"
+                :label="$t('form.name')"
                 dense
                 outlined
               ></v-text-field>
 
               <v-text-field
                 v-model="loginData.email"
-                label="Email"
+                :label="$t('form.email')"
                 dense
                 outlined
               ></v-text-field>
               <v-text-field
                 v-model="loginData.password"
-                label="Password"
+                :label="$t('form.password')"
                 type="password"
                 dense
                 outlined
               ></v-text-field>
 
-              <v-btn color="success" @click="login(dialog)">Login</v-btn>
+              <v-btn color="success" @click="login(dialog)">{{
+                $t("buttons.login")
+              }}</v-btn>
             </form>
           </v-card-text>
           <v-card-actions class="justify-end">
-            <v-btn text @click="dialog.value = false">Close</v-btn>
+            <v-btn text @click="dialog.value = false">{{
+              $t("buttons.close")
+            }}</v-btn>
           </v-card-actions>
         </v-card>
       </template>

@@ -8,12 +8,11 @@
       <v-list-item-content>
         <v-list-item-title
           ><router-link class="text-decoration-none" :to="item.to">{{
-            item.title
+            $t(item.title)
           }}</router-link></v-list-item-title
         >
       </v-list-item-content>
     </v-list-item>
-
     <v-list-item class="d-flex justify-center align-center">
       <v-list-item-action
         class="d-flex flex-column align-center justify-center"
@@ -47,12 +46,16 @@ export default {
   data() {
     return {
       mobileMenuLinks: [
-        { title: "Home", icon: "mdi-home-city", to: "/" },
         {
-          title: "Contact Us",
+          title: "nav.home",
+          icon: "mdi-home-city",
+          to: "/",
+        },
+        {
+          title: "nav.contactUs",
           icon: "mdi-card-account-phone-outline",
-          to: "/contact-us",
-        }
+          to: `${this.$i18n.locale}/contact-us`,
+        },
       ],
     };
   },

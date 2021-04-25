@@ -1,8 +1,12 @@
 <template>
   <div>
     <v-layout class="justify-end d-none d-md-flex align-center">
-      <router-link class="mr-3 link" to="/">Homepage</router-link>
-      <router-link class="mr-3 link" to="/contact-us">Contact Us</router-link>
+      <div v-for="link in navLinks" :key="link.title">
+        <router-link class="mr-3 link" :to="link.to">{{
+          $t(link.title)
+        }}</router-link>
+      </div>
+
       <app-login v-if="!activeUser" />
       <app-drop-down-menu v-else :activeUser="activeUser" />
 
@@ -26,6 +30,17 @@ export default {
       type: Object,
       required: false,
     },
+  },
+  data() {
+    return {
+      navLinks: [
+        { title: "nav.home", to: "/" },
+        {
+          title: "nav.contactUs",
+          to: `${this.$i18n.locale}/contact-us`,
+        },
+      ],
+    };
   },
 };
 </script>

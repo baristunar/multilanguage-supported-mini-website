@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "contactUs": "Contact Us"
+  },
+  "buttons": {
+    "login": "Login",
+    "logout": "Logout",
+    "close": "Close",
+    "send": "Send"
+  },
+  "homepage": {
+    "title": "<strong>Welcome to </strong> <br /><br />\n <span class='error--text'> Dummy </span>Website!",
+    "subTitle": "What we are doing?",
+    "mainText": "Lorem ipsum  sit amet consectetur adipisicing elit Voluptatum\n eaque  vel facere voluptatibus at beatae quia sint\n deleniti corrupti suscipit autem sit numquam, minus\n praesentium sunt enim!Lorem ipsum dolor sit amet consectetur\n adipisicing elit Voluptatum eaque voluptatem velLorem ipsum  sit amet consectetur adipisicing elit Voluptatum\n eaque  vel facere voluptatibus at beatae quia sint\n deleniti corrupti suscipit autem sit numquam, minus\n praesentium sunt enim!Lorem ipsum dolor sit amet consectetur\n adipisicing elit Voluptatum eaque voluptatem vel"
+  },
+  "form": {
+    "login": "Login",
+    "title": "Title",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "description": "Description",
+    "country": "Country"
+  },
+  "countryList": [
+    { "id": "TR", "name": "Turkey" },
+    { "id": "US", "name": "United States of America" },
+    { "id": "GB", "name": "United Kingdom" },
+    { "id": "DE", "name": "Germany" },
+    { "id": "SE", "name": "Sweden" },
+    { "id": "KE", "name": "Kenya" },
+    { "id": "BR", "name": "Brazil" },
+    { "id": "ZW", "name": "Zimbabwe" }
+  ],
+  "errors": {
+    "404": "404 Not Found."
+  }
+}

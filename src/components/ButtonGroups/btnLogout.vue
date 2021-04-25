@@ -1,5 +1,7 @@
 <template>
-  <v-btn depressed small rounded color="primary" @click="logout">Logout</v-btn>
+  <v-btn depressed small rounded color="primary" @click="logout">{{
+    $t("buttons.logout")
+  }}</v-btn>
 </template>
 
 <script>

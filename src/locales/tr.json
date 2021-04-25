@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "contactUs": "İletişim"
+  },
+  "buttons": {
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
+    "close": "Kapat",
+    "send": "Gönder"
+  },
+  "homepage": {
+    "title": "<strong>Dummy web sitesine </strong> <br /><br />\n <span class='error--text'> Hoşgeldiniz! </span>",
+    "subTitle": "Neler yapıyoruz?",
+    "mainText": "Günümüzde teknolojinin gelişim göstermesi ve internet kullanıcıların artması ile birlikte kurum ve kuruluşlar açısından web tasarımı önemi daha fazla artmaya başlamıştır. Kurumsal web tasarımı, kurumun kurumsal yanının ortaya çıkması ve kendi varlığını tüm geniş kesimlere en iyi şekilde lanse edebilmesi açısından oldukça fazla önem teşkil etmektedir.\n Online itibarın en iyi şekilde ve en kısa zaman zarfı içerisinde yaşanabilmesi adına bu tür tasarım faaliyetlerinin de artık çağımızda oldukça fazla önem arz etmeye başlamış olduğunu rahatlıkla belirtmemiz de mümkün olacaktır. Geniş kesimlerin bir bakış da şirketin prezentabl şirkete sahip olduğunu kolay idrak edebilmesi adına bu tür kurumsal web  hizmetlerinin son derece büyük bir önem arz ettiğinin altını çizebiliriz."
+  },
+  "form": {
+    "login": "Giriş Yap",
+    "title": "Başlık",
+    "name": "İsim",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "password": "Şifre",
+    "description": "Açıklama",
+    "country": "Ülke"
+  },
+  "countryList": [
+    { "id": "TR", "name": "Türkiye" },
+    { "id": "US", "name": "Amerika Birleşik Devletleri" },
+    { "id": "GB", "name": "Birleşik Krallık" },
+    { "id": "DE", "name": "Almanya" },
+    { "id": "SE", "name": "İsveç" },
+    { "id": "KE", "name": "Kenya" },
+    { "id": "BR", "name": "Brezilya" },
+    { "id": "ZW", "name": "Zimbabve" }
+  ],
+  "errors": {
+    "404": "404 Sayfa Bulunamadı."
+  }
+}
