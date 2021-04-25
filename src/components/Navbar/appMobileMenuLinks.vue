@@ -7,9 +7,13 @@
 
       <v-list-item-content>
         <v-list-item-title
-          ><router-link class="text-decoration-none" :to="{ name: item.to }">{{
-            $t(item.title)
-          }}</router-link></v-list-item-title
+          ><router-link
+            active-class="active"
+            exact
+            class="text-decoration-none"
+            :to="{ name: item.to }"
+            >{{ $t(item.title) }}</router-link
+          ></v-list-item-title
         >
       </v-list-item-content>
     </v-list-item>
@@ -61,3 +65,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.active {
+  color: #000;
+}
+</style>

@@ -53,8 +53,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
   if (to.params.locale !== "en" && to.params.locale !== "tr") {
-    console.log("test", to.params.locale);
-
     next("/");
   }
 });

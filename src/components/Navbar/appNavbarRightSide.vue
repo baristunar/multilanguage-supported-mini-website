@@ -2,9 +2,14 @@
   <div>
     <v-layout class="justify-end d-none d-md-flex align-center">
       <div v-for="link in navLinks" :key="link.title">
-        <router-link class="mr-3 link" :to="{ name: link.to }">{{
-          $t(link.title)
-        }}</router-link>
+        <router-link
+          class="mr-3 link"
+          type="button"
+          active-class="active"
+          exact
+          :to="{ name: link.to }"
+          >{{ $t(link.title) }}</router-link
+        >
       </div>
 
       <app-login v-if="!activeUser" />
@@ -39,7 +44,7 @@ export default {
           title: "nav.contactUs",
           to: "contactUs",
         },
-      ] /* `${this.$i18n.locale}/contact-us` */,
+      ],
     };
   },
 };
@@ -48,5 +53,8 @@ export default {
 <style scoped>
 .link {
   text-decoration: none;
+}
+.active {
+  color: #000;
 }
 </style>
