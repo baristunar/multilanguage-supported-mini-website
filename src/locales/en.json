@@ -10,9 +10,9 @@
     "send": "Send"
   },
   "homepage": {
-    "title": "<strong>Welcome to </strong> <br /><br />\n <span class='error--text'> Dummy </span>Website!",
+    "title": "<strong>Welcome to </strong> <br /><br /> <span class='error--text'> Dummy </span>Website!",
     "subTitle": "What we are doing?",
-    "mainText": "Lorem ipsum  sit amet consectetur adipisicing elit Voluptatum\n eaque  vel facere voluptatibus at beatae quia sint\n deleniti corrupti suscipit autem sit numquam, minus\n praesentium sunt enim!Lorem ipsum dolor sit amet consectetur\n adipisicing elit Voluptatum eaque voluptatem velLorem ipsum  sit amet consectetur adipisicing elit Voluptatum\n eaque  vel facere voluptatibus at beatae quia sint\n deleniti corrupti suscipit autem sit numquam, minus\n praesentium sunt enim!Lorem ipsum dolor sit amet consectetur\n adipisicing elit Voluptatum eaque voluptatem vel"
+    "mainText": "Lorem ipsum  sit amet consectetur adipisicing elit Voluptatum eaque  vel facere voluptatibus at beatae quia sint deleniti corrupti suscipit autem sit numquam, minus praesentium sunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum eaque voluptatem velLorem ipsum  sit amet consectetur adipisicing elit Voluptatum eaque  vel facere voluptatibus at beatae quia sint deleniti corrupti suscipit autem sit numquam, minus praesentium sunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatum eaque voluptatem vel"
   },
   "form": {
     "login": "Login",
