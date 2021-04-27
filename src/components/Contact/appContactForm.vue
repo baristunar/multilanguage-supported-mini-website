@@ -107,6 +107,7 @@ export default {
       if (this.activeUser) {
         this.contactForm.name = this.activeUser.name;
         this.contactForm.email = this.activeUser.email;
+        this.contactForm.title = this.activeUser.title;
       }
     },
     phoneValidate() {
